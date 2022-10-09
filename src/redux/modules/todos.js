@@ -3,9 +3,10 @@
 const add_list = "add_list";
 
 // Action Creator
-export const addlist = () => {
+export const addlist = (payload) => {
   return {
     type: add_list,
+    payload,
   };
 };
 
@@ -24,6 +25,8 @@ const initialState = [
 // 리듀서
 const lists = (state = initialState, action) => {
   switch (action.type) {
+    case add_list:
+      return [...state, action.payload];
     default:
       return state;
   }

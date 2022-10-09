@@ -5,17 +5,15 @@ import List from "./components/list/List";
 import Globalstyle from "./components/globalstyled/Globalstyle";
 import { useState } from "react";
 
+const Wrap = styled.div`
+  max-width: 1200px;
+  width: 95%;
+  min-height: 500px;
+  background-color: #fff;
+  margin: 0 auto;
+`;
+
 function App() {
-  
-
-  const Wrap = styled.div`
-    max-width: 1200px;
-    width: 95%;
-    min-height: 500px;
-    background-color: #fff;
-    margin: 0 auto;
-  `;
-
   return (
     <>
       <Globalstyle />
