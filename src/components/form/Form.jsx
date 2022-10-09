@@ -28,25 +28,27 @@ const Title = styled.h1`
 let count = 0;
 
 const Form = () => {
+  const input = document.getElementById("in");
   const Store = useSelector((state) => state);
   const dispatch = useDispatch();
   console.log(Store);
 
-  const [title, setitle] = useState("");
+  const [desc, setitle] = useState("");
 
   const onChangeHandler = (event) => {
     setitle(event.target.value);
-    console.log(title);
+    console.log(desc);
   };
 
   const add = () => {
-    if (title === "") return;
+    if (desc === "") return;
     dispatch(
       addlist({
         id: Store.todos.length + 1,
-        title,
+        title: desc,
       })
     );
+    input.value = null;
   };
 
   console.log();
@@ -57,7 +59,7 @@ const Form = () => {
       <InputBox>
         {/* <Input type="text" onChange={onChangeHandler}></Input>
         <Btn>추가하기</Btn> */}
-        <input name="title" type="text" onChange={onChangeHandler} />
+        <input id="in" name="title" type="text" onChange={onChangeHandler} />
         <button onClick={add}>추가하기</button>
       </InputBox>
     </>
